@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jobson-Function", "UpworkJobPostingFunction\Jobson-Function.csproj", "{3C6FFAAF-FF97-4A23-B6F5-97F072B821E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anthropic.SDK", "Anthropic-SDK\Anthropic.SDK\Anthropic.SDK.csproj", "{D794B05F-54E1-4017-9466-0222245AFEB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jobson-FunctionTest", "UpworkJobPostingTest\Jobson-FunctionTest.csproj", "{E5953CD7-E0FE-4B7D-9392-F75578F6DE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobson-Data", "Jobson-Data\Jobson-Data.csproj", "{3C69058B-6DD2-4574-B6D2-083D4E96283B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C6FFAAF-FF97-4A23-B6F5-97F072B821E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6FFAAF-FF97-4A23-B6F5-97F072B821E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6FFAAF-FF97-4A23-B6F5-97F072B821E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6FFAAF-FF97-4A23-B6F5-97F072B821E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D794B05F-54E1-4017-9466-0222245AFEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D794B05F-54E1-4017-9466-0222245AFEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D794B05F-54E1-4017-9466-0222245AFEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D794B05F-54E1-4017-9466-0222245AFEB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5953CD7-E0FE-4B7D-9392-F75578F6DE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5953CD7-E0FE-4B7D-9392-F75578F6DE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5953CD7-E0FE-4B7D-9392-F75578F6DE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5953CD7-E0FE-4B7D-9392-F75578F6DE59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C69058B-6DD2-4574-B6D2-083D4E96283B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C69058B-6DD2-4574-B6D2-083D4E96283B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C69058B-6DD2-4574-B6D2-083D4E96283B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C69058B-6DD2-4574-B6D2-083D4E96283B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {498EF99C-DB3D-4239-AA4A-335383BC992C}
+	EndGlobalSection
+EndGlobal
