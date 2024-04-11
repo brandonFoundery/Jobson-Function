@@ -5,6 +5,9 @@
     <UserSecretsId>52c765db-e022-4448-b020-439ef4427a08</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Services\TrelloService.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="GraphQL.Client" Version="6.0.3" />
     <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="6.0.3" />
     <PackageReference Include="Manatee.Trello" Version="4.4.3" />

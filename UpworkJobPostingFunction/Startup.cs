@@ -68,7 +68,6 @@ namespace Jobson
                 ///
                 builder.Services.AddScoped<IJobFilterService, JobFilterService>();
                 builder.Services.AddScoped<ICoverletterService, CoverLetterService>();
-                builder.Services.AddScoped<ITrelloService, TrelloService>();
                 builder.Services.AddScoped<IPromptRepository, PromptRepository>();
                 builder.Services.AddScoped<IUpworkGraphQLService, MockUpworkGraphQLService>();
                 builder.Services.AddScoped<IProcessFeedService, ProcessFeedService>();
@@ -86,7 +85,6 @@ namespace Jobson
                 ///
                 builder.Services.AddScoped<IJobFilterService, JobFilterService>();
                 builder.Services.AddScoped<ICoverletterService, CoverLetterService>();
-                builder.Services.AddScoped<ITrelloService, TrelloService>();
                 builder.Services.AddScoped<IPromptRepository, PromptRepository>();
                 builder.Services.AddScoped<IUpworkGraphQLService, UpworkGraphQLService>();
                 builder.Services.AddScoped<IProcessFeedService, ProcessFeedService>();

@@ -17,7 +17,6 @@ namespace UpworkJobPostingTest
         private Mock<IHttpClientFactory> _mockHttpClientFactory;
         private Mock<IJobFilterService> _mockJobFilterService;
         private Mock<ICoverletterService> _mockCoverletterService;
-        private Mock<ITrelloService> _mockTrelloService;
         private Mock<IScraperService> _mockScraperService;
         private Mock<IUpworkProfileService> _mockUpworkProfileService;
         private Mock<ILogger<ProcessFeedService>> _mockLogger;
@@ -37,7 +36,6 @@ namespace UpworkJobPostingTest
             _mockHttpClientFactory = new Mock<IHttpClientFactory>();
             _mockJobFilterService = new Mock<IJobFilterService>();
             _mockCoverletterService = new Mock<ICoverletterService>();
-            _mockTrelloService = new Mock<ITrelloService>();
             _mockScraperService = new Mock<IScraperService>();
             _mockUpworkProfileService = new Mock<IUpworkProfileService>();
             _mockLogger = new Mock<ILogger<ProcessFeedService>>();
@@ -62,7 +60,6 @@ namespace UpworkJobPostingTest
                 context,
                 _mockHttpClientFactory.Object,
                 _mockCoverletterService.Object,
-                _mockTrelloService.Object,
                 _mockUpworkProfileService.Object,
                 _mockUpworkGraphQLService.Object,
                 _mockJobRepository.Object
@@ -85,7 +82,7 @@ namespace UpworkJobPostingTest
             await processFeedService.FetchFeeds_And_Process();
 
             // Assert
-            _mockTrelloService.Verify(t => t.AddJobToBoard(It.IsAny<Job>(),It.IsAny<string>()), Times.Once);
+            //_mockTrelloService.Verify(t => t.AddJobToBoard(It.IsAny<Job>(),It.IsAny<string>()), Times.Once);
         }
         
         

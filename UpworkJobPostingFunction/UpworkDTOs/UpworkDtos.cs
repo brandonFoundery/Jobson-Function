@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Jobson_Data.Enums;
 
 namespace Jobson.UpworkDTOs
 {
@@ -155,6 +156,7 @@ namespace Jobson.UpworkDTOs
         public bool CanClientReceiveContractProposal { get; set; }
         public ClientProposalsConnection ClientProposals { get; set; } // Assuming a custom class
         public CustomFieldsConnection CustomFields { get; set; } // Assuming a custom class
+        public JobStatusEnum Status { get; set; } = JobStatusEnum.New;
     }
 
     public class PrivateCompanyInfo

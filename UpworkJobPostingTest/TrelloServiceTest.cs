@@ -17,7 +17,6 @@ namespace UpworkJobPostingTest
         {
             private Mock<IOptions<AppSettings>> mockOptions;
             private AppSettings appSettings;
-            private TrelloService trelloService;
 
             [SetUp]
             public void SetUp()
