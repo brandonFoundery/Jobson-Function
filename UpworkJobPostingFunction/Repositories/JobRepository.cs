@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Jobson.Models;
+using Jobson_Data.Models;
 
 namespace Jobson.Repositories
 {

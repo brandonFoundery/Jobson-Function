@@ -1,14 +1,11 @@
 using System.ComponentModel.DataAnnotations;
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using Jobson_Data.Models;
 
-namespace Jobson.Models
+namespace Jobson_Data.Models
 {
-    public class Job
+    public class Job: DomainObjectWithCreateAndUpdate
     {
-        [Key] public string Guid { get; set; }
-        public int ProfileTypeId { get; set; }
+        public long ProfileTypeId { get; set; }
         [ForeignKey("ProfileTypeId")]
         public ProfileType ProfileType { get; set; }
         public string Title { get; set; }
@@ -38,8 +35,8 @@ namespace Jobson.Models
         public string Content { get; set; }
 
         //Map to UpworkProfile
-        public int UpworkProfileId { get; set; }
+        public long? UpworkProfileId { get; set; }
         [ForeignKey("UpworkProfileId")]
-        public UpworkProfile UpworkProfile { get; set; }
+        public UpworkProfile? UpworkProfile { get; set; }
     }
 }

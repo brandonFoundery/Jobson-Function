@@ -2,11 +2,8 @@
 
 namespace Jobson_Data.Models
 {
-    public class ProfileType
+    public class ProfileType: DomainObjectWithCreateAndUpdate
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //Id
-        public int Id { get; set; }
         //Name of the profile type
         public string Name { get; set; }
     }

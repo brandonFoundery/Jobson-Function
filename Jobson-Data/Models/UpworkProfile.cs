@@ -3,13 +3,11 @@ using Jobson.Models;
 
 namespace Jobson_Data.Models
 {
-    public class UpworkProfile
+    public class UpworkProfile: DomainObjectWithCreateAndUpdate
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public string Name { get; set; }
 
-        public int ProfileTypeId { get; set; }
+        public long ProfileTypeId { get; set; }
         [ForeignKey("ProfileTypeId")]
         public ProfileType ProfileType { get; set; }
 
@@ -18,13 +16,10 @@ namespace Jobson_Data.Models
         //Stores the content of the profile page
         public string ProfileContent { get; set; }
         public string UpworkProfileKey { get; set; }
-        //Reference TrelloBoard
-        public string TrelloBoardId { get; set; }
-        [ForeignKey("TrelloBoardId")]
-        public TrelloBoard TrelloBoard { get; set; }
 
-        //Map to Job
-        public List<Job> Jobs { get; set; }
+        // Explicitly defining the navigation property back to Job
+        public List<Job> Jobs { get; set; } = new List<Job>();  // Initialize to prevent null issues
+
 
     }
 }

@@ -11,13 +11,14 @@ using Jobson.LLMProviders;
 using Jobson.Models;
 using Jobson.Repositories;
 using Jobson.UpworkDTOs;
+using Jobson_Data.Models;
 
 namespace Jobson.Services
 {
     public interface IJobFilterService
     {
         Task<List<MarketplaceJobPosting>> FilterJobsAsync(List<MarketplaceJobpostingSearchEdge> nonDuplicateJobs,
-            int profileTypeId);
+            long profileTypeId);
     }
 
     public class JobFilterService: IJobFilterService
@@ -30,8 +31,9 @@ namespace Jobson.Services
             _scraperService = scraperService;
             _jobRepository = jobRepository;
         }
-        public async Task<List<MarketplaceJobPosting>> FilterJobsAsync(List<MarketplaceJobpostingSearchEdge> nonDuplicateJobs,
-            int profileTypeId)
+        public async Task<List<MarketplaceJobPosting>> FilterJobsAsync(
+            List<MarketplaceJobpostingSearchEdge> nonDuplicateJobs,
+            long profileTypeId)
         {
             var filteredJobs = new List<MarketplaceJobPosting>();
             foreach (var nonDuplicateJob in nonDuplicateJobs)

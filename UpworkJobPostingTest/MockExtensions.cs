@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Jobson.Models;
+using Jobson_Data.Models;
 
 namespace UpworkJobPostingTest;
 

@@ -1,3 +1,4 @@
+using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -6,6 +7,9 @@ using Jobson.Models;
 using Jobson.Repositories;
 using Jobson.Services;
 using Jobson.UpworkDTOs;
+using Jobson_Data.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace UpworkJobPostingTest
 {
@@ -22,6 +26,8 @@ namespace UpworkJobPostingTest
         private Mock<ILogger<ProcessFeedService>> _mockLogger;
         private Mock<IUpworkGraphQLService> _mockUpworkGraphQLService;
         private Mock<IJobRepository> _mockJobRepository;
+        private Mock<IHttpContextAccessor> _mockHttpContextAccessor;
+        private Mock<IOptions<OperationalStoreOptions>> _mockOperationalStoreOptions;
 
         public ProcessFeedServiceTests()
         {
@@ -41,6 +47,8 @@ namespace UpworkJobPostingTest
             _mockLogger = new Mock<ILogger<ProcessFeedService>>();
             _mockUpworkGraphQLService = new Mock<IUpworkGraphQLService>();
             _mockJobRepository = new Mock<IJobRepository>();
+            _mockHttpContextAccessor = new Mock<IHttpContextAccessor>();
+            _mockOperationalStoreOptions = new Mock<IOptions<OperationalStoreOptions>>();
         }
 
         [Test]
@@ -51,10 +59,10 @@ namespace UpworkJobPostingTest
                 .UseInMemoryDatabase(databaseName: "TestDatabase")
                 .Options;
 
-            using var context = new ApplicationContext(options);
+            using var context = new ApplicationContext(options, _mockOperationalStoreOptions.Object, _mockHttpContextAccessor.Object);
 
             //
-            
+
             var processFeedService = new ProcessFeedService(
                 _mockLogger.Object,
                 context,
@@ -66,11 +74,11 @@ namespace UpworkJobPostingTest
             );
 
             var marketplaceJobPostings = new List<MarketplaceJobPosting>
-            {
-                new() { Id = "123" }
-            };
+                {
+                    new() { Id = "123" }
+                };
 
-            var jobPosting = new Job();            
+            var jobPosting = new Job();
 
             _mockJobFilterService.Setup(j => j.FilterJobsAsync(It.IsAny<List<MarketplaceJobpostingSearchEdge>>(), It.IsAny<int>()))
                 .ReturnsAsync(marketplaceJobPostings);
@@ -84,7 +92,7 @@ namespace UpworkJobPostingTest
             // Assert
             //_mockTrelloService.Verify(t => t.AddJobToBoard(It.IsAny<Job>(),It.IsAny<string>()), Times.Once);
         }
-        
-        
+
+
     }
 }

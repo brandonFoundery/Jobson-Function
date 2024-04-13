@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Jobson.Models;
 using Jobson.UpworkDTOs;
+using Jobson_Data.Models;
 
 namespace Jobson.Services
 {

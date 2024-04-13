@@ -21,6 +21,7 @@ using Jobson.Models;
 using Jobson.Repositories;
 using Jobson.Services;
 using Jobson.ServicesMock;
+using Jobson_Data.Models;
 
 [assembly: FunctionsStartup(typeof(Jobson.Startup))]
 
